@@ -27,7 +27,7 @@ Sorting algorithms are essential tools for organizing and optimizing data. The c
 * No more than 5 functions per file
 * No use of the standard library, unless specified. Any use of functions like printf, puts, … is totally forbidden.
 * In the examples, the `main.c` files in the testfiles directory are shown as examples, and are used to test functions.
-* The prototypes of all your functions are included in the header file called `sort.h`
+* The prototypes of all functions are included in the header file called `sort.h`
 * All the header files is include guarded
 * A list/array does not need to be sorted if its size is less than 2.
 
