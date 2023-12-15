@@ -1,50 +1,36 @@
 #include <stdio.h>
-#include <string.h>
 #include "sort.h"
 
 /**
- * swap - swaps the address of the pointer to an int
- *
- * @a: first int to swap
- * @b: second int to swap
- *
- * Return: Nothing
- */
-void swap(int *a, int *b)
-{
-	int temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
-/**
- * bubble_sort - A function that sorts an array of integers
- * in ascending order using the Bubble sort algorithm
- *
- * @array: The array of integers to sort
- * @size: size of the @array
- *
- * Return: Sorted array of integers
- */
+  * bubble_sort - Sorts an array of integers in ascending
+  * order using the Bubble sort algorithm.
+  *
+  * @array: The array of integers to sort
+  * @size: The size of the array of integers
+  *
+  * Return: Nothing!
+  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j, k;
+	int i, aux = 0, max = 0, swapped = 1;
 
-	for (i = 0; i < size - 1; i++)
+	if (!array || size < 2)
+		return;
+
+	max = size - 1;
+
+	for (i = 0; i < max; ++i)
 	{
-		for (j = 0; j < size - i - 1; j++)
+		if (array[i] > array[i + 1])
 		{
-			if (array[j] > array[j + 1])
-			{
-				swap(&array[j], &array[j + 1]);
-
-				for (k = 0; k < size; k++)
-					printf("%d ", array[k]);
-
-				printf("\n");
-			}
+			aux = array[i];
+			array[i] = array[i + 1];
+			array[i + 1] = aux;
+			swapped = 1;
+			print_array(array, size);
 		}
+
+		if (swapped == 1 && i == max - 1)
+			i = -1, swapped = 0, --max;
 	}
 }
