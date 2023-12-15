@@ -2,7 +2,7 @@
 #include <string.h>
 #include "sort.h"
 
-/*
+/**
  * swap - swaps the address of the pointer to an int
  *
  * @a: first int to swap
@@ -19,14 +19,14 @@ void swap(int *a, int *b)
 	*b = temp;
 }
 
-/*
+/**
  * bubble_sort - A function that sorts an array of integers
  * in ascending order using the Bubble sort algorithm
  *
  * @array: The array of integers to sort
  * @size: size of the @array
  *
- * Returns: Sorted array of integers
+ * Return: Sorted array of integers
  */
 void bubble_sort(int *array, size_t size)
 {
@@ -36,10 +36,10 @@ void bubble_sort(int *array, size_t size)
 	{
 		for (j = 0; j < size - i - 1; j++)
 		{
-			if(array[j] > array[j + 1])
+			if (array[j] > array[j + 1])
 			{
 				swap(&array[j], &array[j + 1]);
-				
+
 				for (k = 0; k < size; k++)
 					printf("%d ", array[k]);
 
